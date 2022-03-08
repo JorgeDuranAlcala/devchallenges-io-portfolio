@@ -25,9 +25,10 @@
 
   .main-layout {
     min-width: 350px;
-    /* max-width: 1200px; */
+    /* max-width: 900px; */
     display: flex;
     flex-direction: column;
+    justify-content: center;
     /* grid-template-areas: "left" "right";
     grid-template-columns: 100%;
     grid-template-rows: repeat(2, 1fr); */
@@ -43,7 +44,7 @@
   }
 
   
-  @media screen and (min-width: 750px) {
+  @media screen and (min-width: 780px) {
     .main-layout {
       flex-direction: row;
     }

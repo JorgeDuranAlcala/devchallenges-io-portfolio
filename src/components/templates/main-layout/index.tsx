@@ -4,7 +4,7 @@ type Props = {} & HTMLAttributes<HTMLDivElement>
 
 function MainLayout({ children }: Props) {
   return (
-    <div className="main-layout p-8">
+    <div className="main-layout p-4">
         {children}
     </div>
   )
