@@ -24,16 +24,16 @@ export function FeaturesSection({}: Props) {
               ))}
             </Flex>
         </Card>
-        <Flex className="" direct="column" gap={20}>
-        <Pagination
-            items={selectedList}
-          >
-            {(data) => {
-              return data?.items.map((projectData, i) => (
-                <Project {...projectData} key={i} />
-              ))
-            }}
-          </Pagination>
+        <Flex direct="column" gap={20}>
+          <Pagination
+              items={selectedList}
+            >
+              {(data) => {
+                return data?.items.map((projectData, i) => (
+                  <Project {...projectData} key={i} />
+                ))
+              }}
+            </Pagination>
         </Flex>
     </Flex>
   )
