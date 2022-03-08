@@ -1,5 +1,7 @@
-import { HTMLAttributes, ReactNode, useCallback, useState } from 'react'
+import { HTMLAttributes, memo, ReactNode, useCallback, useMemo, useState } from 'react'
+import type { MouseEvent } from 'react'
 import { Flex } from "../../atoms"
+import { createPagesData } from '../../../helpers/createPagesData'
 
 type PaginationData<T> = { 
     page: number, 
@@ -18,30 +20,29 @@ export function Pagination<T>({
 }: Props<T>) {
 
     const [currentPage, setCurrentPage] = useState(0)
-    const paginationData = []
-    let j = 1;
-for (let i = 0; i < items.length; i += 3) {
-    let data: PaginationData<T> = {
-        page: j,
-        items: items.slice(i, i + 3)
-    };
-    paginationData.push(data)
-    j++
+    const paginationData = useMemo(() => {
+        return createPagesData(items, (i, page) => ({
+            page,
+            items: items.slice(i, i + 3)
+        }))
+    }, [items])
+
+const steppersClasses = (index: number) => `p-2 border-2 border-primary cursor-pointer ${ currentPage === index  ? "bg-primary" : ""}`
+
+const changePageForward = () => {
+    if (currentPage === paginationData.length - 1) return;
+    setCurrentPage(current => current + 1)
 }
 
-const changePageForward = useCallback(() => {
-    if (currentPage !== paginationData.length) {
-        setCurrentPage(current => current + 1)
-        return;
-    }
-}, [])
+const changePageBackward = () => {
+    if (currentPage === 0) return;
+    setCurrentPage(current => current - 1)
+}
 
-const changePageBackward = useCallback(() => {
-    if (currentPage !== 0) {
-        setCurrentPage(current => current - 1)
-        return;
-    }
-}, [])
+const changePage = (index: number) => (e: MouseEvent<HTMLDivElement>) => {
+    setCurrentPage(index)
+}
+
 
   return (
     <Flex direct="column" gap={15} {...props}>
@@ -52,7 +53,11 @@ const changePageBackward = useCallback(() => {
                 new Array(paginationData.length)
                 .fill(0)
                 .map((_, i) => (
-                    <Flex  className="p-2 border-2 border-primary cursor-pointer" key={i}>
+                    <Flex  
+                        className={steppersClasses(i)} 
+                        key={i}
+                        onClick={changePage(i)}
+                    >
                         {i + 1}
                     </Flex>
                 ))
@@ -62,5 +67,6 @@ const changePageBackward = useCallback(() => {
     </Flex>
   )
 }
+
 
 export default Pagination

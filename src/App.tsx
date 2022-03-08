@@ -14,20 +14,22 @@ function App() {
         <AboutMeSection/>
         <FeaturesSection/>
       </MainLayout> */}
-      <Pagination items={[
-        {name: "george", rage: 'high'},
-        {name: "Williams", rage: 'low'},
-        {name: "Margot", rage: 'medium'},
-        {name: "Margaret", rage: 'medium'},
-        {name: "Mary", rage: 'medium'},
-        {name: "john", rage: 'medium'},
-      ]} >
-        {({ items }) => {
-          return (
-            items.map((val, i) => <div key={i}>{val.name} | {val.rage}</div>)
-          )
-        }}
-      </Pagination>
+        <Pagination items={[
+          {name: "george", rage: 'high'},
+          {name: "Williams", rage: 'low'},
+          {name: "Margot", rage: 'medium'},
+          {name: "Margaret", rage: 'medium'},
+          {name: "Mary", rage: 'medium'},
+          {name: "john", rage: 'medium'},
+        ]} >
+          {({ items }) => {
+            return (
+              items.map((val, i) => (
+                <Project></Project>
+              ))
+            )
+          }}
+        </Pagination>
     </div>
   )
 }
