@@ -10,7 +10,7 @@ type PaginationData<T> = {
 
 type Props<T> = {
     items: T[],
-    children: (data: PaginationData<T>) => ReactNode
+    children: (data?: PaginationData<T>) => ReactNode
 } & HTMLAttributes<HTMLDivElement>
 
 export function Pagination<T>({
