@@ -18,7 +18,7 @@ export function FeaturesSection({}: Props) {
     <Flex direct="column" className="w-full p-4" gap={20}>
         <Card flex col className="p-4 w-full" gap={20}>
             <Title>Projects ({projects.length})</Title>
-            <Flex gap={10}>
+            <Flex gap={10} wrap="wrap">
               {listOfTags.map((l, i) => (
                 <Button secondary onClick={filterByTag(l)} key={i}>{l}</Button>
               ))}

@@ -16,6 +16,7 @@ export function Flex({
       gap = 0,
       children,
       flexG,
+      wrap,
       ...props
 }: FlexProps) {
   return (
@@ -25,7 +26,8 @@ export function Flex({
         alignItems: align,
         flexDirection: direct,
         gap,
-        flex: flexG
+        flex: flexG,
+        flexWrap: wrap
     }}
     {...props}
     >
