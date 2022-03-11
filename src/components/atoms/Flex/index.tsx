@@ -15,7 +15,6 @@ export function Flex({
       direct = "row",
       gap = 0,
       children,
-      wrap,
       flexG,
       wrap,
       ...props

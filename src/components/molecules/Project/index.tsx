@@ -27,7 +27,7 @@ export function Project({
   return (
   <Card className={classes} {...props}>
     <Flex flexG={0.4} className="h-[200px]">
-        <Image full className="object-cover rounded-md" src={previewImgUrl} />
+        <Image full className="object-cover rounded-md" src={previewImgUrl} loading="lazy" />
     </Flex>
     <Flex direct="column" flexG={0.8} gap={15}>
       <Title>{title}</Title>

@@ -22,12 +22,12 @@ type Props<T> = {
 
 export function Pagination<T>({ children, items, ...props }: Props<T>) {
   const [currentPage, setCurrentPage] = useState(0);
-  const paginationData = useMemo(() => {
-    return createPagesData(items, (i, page) => ({
+  const paginationData = useMemo(
+    () => createPagesData(items, (i, page) => ({
       page,
       items: items.slice(i, i + 3),
-    }));
-  }, [items]);
+    }))
+  , [items])
 
   const steppersClasses = (index: number) =>
     `py-2 px-4 border-2 border-primary cursor-pointer font-bold ${
@@ -44,9 +44,15 @@ export function Pagination<T>({ children, items, ...props }: Props<T>) {
     setCurrentPage((current) => current - 1);
   };
 
-  const changePage = (index: number) => useCallback((e: MouseEvent<HTMLButtonElement>) => {
+  const changePage = useCallback((index: number) => (e: MouseEvent<HTMLButtonElement>) => {
     setCurrentPage(index);
   }, []);
+/*   
+  const changePage = (index: number) => (e: MouseEvent<HTMLButtonElement>) => {
+    setCurrentPage(index);
+  }; 
+  
+*/
 
   return (
     <Flex direct="column" gap={15} {...props}>

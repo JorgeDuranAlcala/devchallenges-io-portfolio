@@ -21,8 +21,10 @@ export function FeaturesSection({}: Props) {
     new Set([...projects.map((p) => p.tags)].flat())
   );
 
-  const filterByTag = (tagName: string) => () => {
-    setSelectedList(projects.filter((p) => p.tags.includes(tagName)));
+  const filterByTag = (tagName: string) => {
+    console.log("tagname", tagName)
+    setSelectedList(projects.filter(p => p.tags.indexOf(tagName) !== -1))
+    //setSelectedList(list => list.filter(p => p.tags.includes(tagName)));
   };
 
   return (
@@ -38,7 +40,7 @@ export function FeaturesSection({}: Props) {
         <Title>Projects ({projects.length})</Title>
         <Flex gap={10} className="w-full">
           {listOfTags.map((tag, i) => (
-            <Button secondary className="p-1" onClick={filterByTag(tag)} key={i}>
+            <Button secondary className="p-1" onClick={() => filterByTag(tag)} key={i}>
               {tag}
             </Button>
           ))}
@@ -47,7 +49,7 @@ export function FeaturesSection({}: Props) {
       <Flex direct="column" gap={20} className="w-full">
         <Pagination items={selectedList} className="w-full">
           {(data) => {
-            return data?.items.map((projectData, i) => (
+            return data?.items?.map((projectData, i) => (
               <Project {...projectData} key={i} className="w-full" />
             ));
           }}

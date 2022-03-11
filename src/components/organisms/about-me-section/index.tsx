@@ -8,11 +8,11 @@ export function AboutMeSection({}: Props) {
   let renderExp = [], renderHobbies = [];
 
   for (let i = 0; i < 3; i++) {
-    renderExp.push(<Experience/>)
+    renderExp.push(<Experience key={i} />)
   }
 
   for (let i = 0; i < 3; i++) {
-    renderHobbies.push(<Hobby/>)
+    renderHobbies.push(<Hobby key={i} />)
   }
 
   return (

@@ -37,7 +37,7 @@
     justify-content: center;
     @apply w-full h-full;
   } 
- /* 
+ */
  
  .main-layout {
    display: grid;
