@@ -17,6 +17,7 @@ export function Flex({
       children,
       wrap,
       flexG,
+      wrap,
       ...props
 }: FlexProps) {
   return (
@@ -26,8 +27,8 @@ export function Flex({
         alignItems: align,
         flexDirection: direct,
         gap,
-        flexWrap: wrap,
-        flex: flexG
+        flex: flexG,
+        flexWrap: wrap
     }}
     {...props}
     >
