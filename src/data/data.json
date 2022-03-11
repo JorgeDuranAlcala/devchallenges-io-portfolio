@@ -54,5 +54,24 @@
             "tags": ["vue", "HTML", "CSS"],
             "codeUrl": "https://www.google.com"
         }
+    ],
+    "experience": [
+        {
+            "title": "Frontend developer",
+            "startDate": "Feb 2017",
+            "endDate": "current",
+            "desc": "Donec aliquam est dui, vel vestibulum diam sollicitudin id. Quisque feugiat malesuada molestie.",
+            "img": "https://picsum.photos/300/300"
+        }
+    ],
+    "hobbies": [
+        {
+            "title": "Gaming",
+            "desc": "Donec aliquam est dui, vel vestibulum diam sollicitudin id. Quisque feugiat malesuada molestie."
+        },
+        {
+            "title": "Soccer",
+            "desc": "Donec aliquam est dui, vel vestibulum diam sollicitudin id. Quisque feugiat malesuada molestie."
+        }
     ]
 }

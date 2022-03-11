@@ -1,0 +1,12 @@
+{
+    "hobbies": [
+        {
+            "title": "Gaming",
+            "desc": "Sometimes - I like to play games"
+        },
+        {
+            "title": "Soccer",
+            "desc": "I like to play soccer regularly"
+        }
+    ]
+}
