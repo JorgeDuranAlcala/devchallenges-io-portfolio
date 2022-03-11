@@ -1,13 +1,16 @@
 import { Title, Image, Card, Subtitle, Text, Flex, Button } from '../../atoms';
+import type { HTMLAttributes } from 'react'
+import { joinClasses } from '../../../helpers/join-classes';
 
 type Props = {
   "preview-img-url": string,
   "demo-url": string,
+  codeUrl: string,
   title: string,
   subtitle: string,
   desc: string,
   tags: string[]
-}
+} & HTMLAttributes<HTMLDivElement>
 
 export function Project({
   "preview-img-url": previewImgUrl,
@@ -15,10 +18,14 @@ export function Project({
   title,
   subtitle,
   desc,
-  tags = []
+  tags = [],
+  codeUrl,
+  className,
+  ...props
 }: Props) {
+  const classes = joinClasses("p-4 flex flex-col md:flex-row gap-5", className)
   return (
-  <Card className="p-4 flex flex-col md:flex-row gap-5" /* justify="center" align="center" gap={15} */>
+  <Card className={classes} {...props}>
     <Flex flexG={0.4} className="h-[200px]">
         <Image full className="object-cover rounded-md" src={previewImgUrl} />
     </Flex>
@@ -38,12 +45,17 @@ export function Project({
           primary 
           className='py-2 px-6'
           >
-          <a href={demoUrl}>
+          <a href={demoUrl} target="_blank">
             Demo
           </a>
         </Button>
-        <Button secondary>
+        <Button 
           secondary
+          className="py-2 px-6"
+        >
+          <a href={codeUrl} target="_blank">
+            Code
+          </a>
         </Button>
       </Flex>
     </Flex>

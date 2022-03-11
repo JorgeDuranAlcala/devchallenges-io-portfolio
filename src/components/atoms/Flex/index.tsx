@@ -2,10 +2,10 @@ import type { CSSProperties, HTMLAttributes } from 'react'
 
 export type FlexProps = {
     justify?: string,
-    direct?: "row" | "row-reverse" | "column" | "column-reverse",
+    direct?: /* "row" | "row-reverse" | "column" | "column-reverse" */ CSSProperties['flexDirection'],
     align?: string,
     gap?: number | string,
-    wrap?: "nowrap" | "wrap" | "wrap-reverse",
+    wrap?: CSSProperties['flexWrap'],
     flexG?: CSSProperties['flex']
 } & HTMLAttributes<HTMLDivElement>
 
@@ -15,6 +15,7 @@ export function Flex({
       direct = "row",
       gap = 0,
       children,
+      wrap,
       flexG,
       ...props
 }: FlexProps) {
@@ -25,6 +26,7 @@ export function Flex({
         alignItems: align,
         flexDirection: direct,
         gap,
+        flexWrap: wrap,
         flex: flexG
     }}
     {...props}
