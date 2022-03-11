@@ -1,0 +1,11 @@
+{
+    "experience": [
+        {
+            "title": "Frontend developer",
+            "startDate": "Feb 2017",
+            "endDate": "current",
+            "desc": "Donec aliquam est dui, vel vestibulum diam sollicitudin id. Quisque feugiat malesuada molestie.",
+            "img": "https://picsum.photos/300/300"
+        }
+    ]
+}

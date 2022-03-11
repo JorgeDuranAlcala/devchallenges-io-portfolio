@@ -1,9 +1,17 @@
 import type { HTMLAttributes } from 'react'
 import { Flex, Image, Text } from '../../atoms'
 
-type Props = {} & HTMLAttributes<HTMLDivElement>
+type Props = {
+    title: string,
+    desc: string
+} & HTMLAttributes<HTMLDivElement>
 
-export function Hobby({className, ...props}: Props) {
+export function Hobby({
+    title,
+    desc,
+    className, 
+    ...props
+}: Props) {
   return (
     <Flex direct="column" gap={30} className="p-2" {...props}>
         <Image 
@@ -15,10 +23,10 @@ export function Hobby({className, ...props}: Props) {
             <Text 
                 fszize={18} type="h5" className="font-bold"
             >
-                    Gaming
+                    {title}
             </Text>
             <Text>
-                Quisque feugiat malesuada molestie.
+               {desc}
             </Text>
         </Flex>
     </Flex>

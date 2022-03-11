@@ -1,28 +1,41 @@
 import type {HTMLAttributes } from 'react'
 import { Flex, Image, Text } from '../../atoms'
 
-type Props = {} & HTMLAttributes<HTMLDivElement>
+type Props = {
+    title: string ,
+    startDate: string,
+    endDate:string ,
+    desc: string,
+    img: string
+} & HTMLAttributes<HTMLDivElement>
 
-export function Experience({}: Props) {
+export function Experience({
+    title,
+    startDate,
+    endDate,
+    desc,
+    img,
+    ...props
+}: Props) {
   return (
-    <Flex gap={30} className="p-2">
+    <Flex gap={30} className="p-2" {...props}>
         <Image 
             w={80} 
             h={80} 
             className="object-contain rounded-md"  
-            src="https://picsum.photos/300/300" 
+            src={img}
         />
         <Flex direct="column">
             <Text fszize={14} type="span" className="mb-2">
-                Feb 2017 - current
+                {startDate} - {endDate}
             </Text>
             <Text 
                 fszize={18} type="h5" className="font-bold"
             >
-                    Front-end developer
+                {title}
             </Text>
             <Text className="mt-4 text-blue-400 text-left">
-                Donec aliquam est dui, vel vestibulum diam sollicitudin id. Quisque feugiat malesuada molestie.
+                {desc}
             </Text>
         </Flex>
     </Flex>

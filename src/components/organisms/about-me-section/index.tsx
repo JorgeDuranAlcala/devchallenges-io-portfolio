@@ -1,19 +1,11 @@
 import { Card, Flex, Title } from '../../atoms'
 import { Experience, Hobby, Profile } from '../../molecules'
+import { experience } from "../../../data/experience.json";
+import { hobbies } from "../../../data/hobbies.json";
 
 type Props = {}
 
 export function AboutMeSection({}: Props) {
-
-  let renderExp = [], renderHobbies = [];
-
-  for (let i = 0; i < 3; i++) {
-    renderExp.push(<Experience key={i} />)
-  }
-
-  for (let i = 0; i < 3; i++) {
-    renderHobbies.push(<Hobby key={i} />)
-  }
 
   return (
     <Flex direct="column" gap={20}>
@@ -22,13 +14,17 @@ export function AboutMeSection({}: Props) {
         <Flex className="w-full">
           <Title>Experience</Title>  
         </Flex>
-        {renderExp}
+        {experience.map((exp, i) => (
+          <Experience {...exp} key={i} />
+        ))}
       </Card>
       <Card flex col gap={10} className="p-4">
         <Flex className="w-full">
           <Title>Hobbies</Title>  
         </Flex>
-        {renderHobbies}
+        {hobbies.map((hobie, i) => (
+          <Hobby {...hobie} key={i} />
+        ))}
       </Card>
     </Flex>
   )
