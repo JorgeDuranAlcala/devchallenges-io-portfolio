@@ -42,6 +42,7 @@
  .main-layout {
    display: grid;
    grid-template-columns: repeat(auto-fit, minmax(200px, 2fr));
+   gap: 2rem;
    @apply w-full h-full;
  } 
 
@@ -81,9 +82,7 @@ body, html {
   width: 100%;
   height: 100%;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  font-family: "Montserrat";
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }

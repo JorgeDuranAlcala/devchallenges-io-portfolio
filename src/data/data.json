@@ -1,13 +1,13 @@
 {
     "projects": [
         {
-            "preview-img-url": "https://picsum.photos/400/400",
-            "demo-url": "url",
-            "title": "project1",
-            "subtitle": "project1 subtitle",
-            "desc": "project1 desc",
-            "tags": ["vue", "HTML", "CSS"],
-            "codeUrl": "https://www.google.com"
+            "preview-img-url": "https://picsum.photos/399/432",
+            "demo-url": "https://jorgeduranalcala.github.io/Edies-homepage/",
+            "title": "Edie hompage",
+            "subtitle": "A pretty landing page",
+            "desc": "This is a pretty landing page made for a challenge from devchallenges.com",
+            "tags": ["HTML", "CSS"],
+            "codeUrl": "https://github.com/JorgeDuranAlcala/Edies-homepage/"
         },
         {
             "preview-img-url": "https://picsum.photos/399/430",

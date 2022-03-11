@@ -2,6 +2,7 @@ import { Card, Flex, Title, Button } from "../../atoms";
 import { Pagination, Project, Skills } from "../../molecules";
 import { projects } from "../../../data/data.json";
 import { useState } from "react";
+import img from '../../../assets/desktop-screenshot.png'
 import {
   FaHtml5,
   FaCss3,
