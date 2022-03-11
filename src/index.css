@@ -42,6 +42,7 @@
  .main-layout {
    display: grid;
    grid-template-columns: repeat(auto-fit, minmax(200px, 2fr));
+   gap: 2rem;
    @apply w-full h-full;
  } 
 
