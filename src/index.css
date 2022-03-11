@@ -12,15 +12,22 @@
     background-color: theme("colors.primary");
     @apply text-white;
   }
+  .btn-primary:hover {
+    background-color: rgb(7 96 216);
+  }
   .btn {
-    padding: theme("spacing.2");
-    @apply rounded-md text-lg;
+    /* padding: theme("spacing.2"); */
+    @apply rounded-md text-lg transition-colors;
   }
   .btn-secondary {
     /* background-color: theme("colors.white"); */
     background-color: #fff;
     border: 2px solid theme("colors.primary");
     color: theme("colors.primary");
+  }
+  .btn-secondary:hover {
+    background-color: theme("colors.primary");
+    color: #fff;
   }
 
  /*  .main-layout {
@@ -31,7 +38,6 @@
     @apply w-full h-full;
   } 
  /* 
- */
  
  .main-layout {
    display: grid;
